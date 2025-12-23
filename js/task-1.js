@@ -390,20 +390,181 @@ console.log(calculateEvenTotal(18));
 console.log(calculateEvenTotal(27));
 console.log(calculateEvenTotal());
 
+function getLength(array) {
+    return array.join("").length;
+}
+console.log(getLength(["Mango", "hurries", "to", "the", "train"]));
+console.log(getLength(["M", "a", "n", "g", "o"]));
+console.log(getLength(["top", "picks", "for", "you"]));
+
+function calculateEngravingPrice(message, pricePerWord) {
+    const totalPrice2 = message.split(" ").length * pricePerWord;
+  return message.split(" ") && totalPrice2;
+}
+console.log(calculateEngravingPrice("JavaScript is in my blood", 10));
+console.log(calculateEngravingPrice("JavaScript is in my blood", 20));
+console.log(calculateEngravingPrice("Web-development is creative work", 40));
+
+function getSlice(array, value) {
+  const arraySlice = array.indexOf(value);
+  
+    return arraySlice >= 0 ? array.slice(0, arraySlice + 1) : "[]";
+  
+}
+console.log(getSlice(["Mango", "Poly", "Ajax"], "Poly"));
+console.log(getSlice(["Mango", "Poly", "Ajax"], "Ajax"));
+console.log(getSlice(["Mango", "Poly", "Ajax"], "Mango"));
+console.log(getSlice(["Mango", "Poly", "Ajax"], "Jacob"));
+console.log(getSlice(["Mango", "Poly", "Ajax"], "Casey"));
+
+function createArrayOfNumbers(min, max) {
+  const total = [];
+
+  for (let i = min; i <= max; i += 1) {
+      total.push(i);
+    }
+    return total;
+}
+console.log(createArrayOfNumbers(1, 3));
+console.log(createArrayOfNumbers(14, 17));
+console.log(createArrayOfNumbers(29, 34));
+console.log(createArrayOfNumbers());
+
+function calculateTotalPrice(order) {
+  let sumTotal = 0;
+
+  for (let i = 0; i < order.length; i += 1) {
+    sumTotal += order[i];
+  }
+  return sumTotal;
+}
+console.log(calculateTotalPrice([12, 85, 37, 4]));
+console.log(calculateTotalPrice([164, 48, 291]));
+console.log(calculateTotalPrice([412, 371, 94, 63, 176]));
+
+function getEvenNumbers(start, end) {
+    let total = [];
+    for (let i = start; i <= end; i += 1) {
+        if (i % 2 === 0) {
+            total.push(i);
+        }
+    }
+    return total;
+}
+console.log(getEvenNumbers(2, 5));
+console.log(getEvenNumbers(3, 11));
+console.log(getEvenNumbers(6, 12));
+console.log(getEvenNumbers(8, 8));
+console.log(getEvenNumbers(7, 7));
+console.log(getEvenNumbers());
+
+function checkStorage1(storage, item) {
+  const normalizedItem = item.toLowerCase();
+  if (storage.includes(normalizedItem)) {
+    return `${normalizedItem} is available to order!`
+  } else {
+    return `Sorry! We are out of stock!`
+  }
+  
+}
+console.log(checkStorage1(["apple", "plum", "pear"], "plum"));
+console.log(checkStorage1(["apple", "plum", "pear"], "pLuM"));
+console.log(checkStorage1(["apple", "plum", "pear"], "pear"));
+console.log(checkStorage1(["apple", "plum", "pear"], "pEAr"));
+console.log(checkStorage1(["apple", "plum", "pear"], "orange"));
+console.log(checkStorage1(["apple", "plum", "pear"], "carrot"));
+
+function getCommonElements(array1, array2) {
+  const commonElements = [];
+  
+  for (let i = 0; i < array1.length; i += 1) {
+    if (array2.includes(array1[i])) {
+    commonElements.push(array1[i]);
+   }
+ } 
+  return commonElements;
+}
+console.log(getCommonElements([1, 2, 3], [2, 4]));
+console.log(getCommonElements([1, 2, 3], [2, 1, 17, 19]));
+console.log(getCommonElements([24, 12, 27, 3], [12, 8, 3, 36, 27]));
+console.log(getCommonElements([10, 20, 30, 40], [4, 30, 17, 10, 40]));
+console.log(getCommonElements([1, 2, 3], [10, 20, 30]));
+
+// Функція createReversedArray() може приймати довільну кількість аргументів.
+// Доповни код функції так, щоб вона повертала масив усіх аргументів, але в масиві вони повинні йти у зворотному порядку.
+// Тобто, при виклику createReversedArray(1, 2, 3), функція має повернути масив [3, 2, 1].
+// Використовуй цикл або метод масиву toReversed(), який застосовується до масиву
+// і результатом роботи повертає новий масив з елементами у зворотньому порядку.
+function createReversedArray(...args) {
+  return args.toReversed();
+}
+
+console.log(createReversedArray(12, 85, 37, 4));
+console.log(createReversedArray(164, 48, 291));
+console.log(createReversedArray(412, 371, 94, 63, 176));
+console.log(createReversedArray());
 
 
+// !nnnnnnnnnnnnnnnnnnnnnnnnnn
 
+const books = [
+  {
+    title: "The Last Kingdom",
+    author: "Bernard Cornwell",
+    rating: 8.38,
+  },
+  {
+    title: "Beside Still Waters",
+    author: "Robert Sheckley",
+    rating: 8.51,
+  },
+  {
+    title: "The Tell-Tale Heart",
+    author: "Edgar Allan Poe",
+    rating: 7.75,
+  }
+];
+for (const book of books) {
+  console.log(book); // Об'єкт книги
+  console.log(book.title); // Назва
+  console.log(book.author); // Автор
+  console.log(book.rating); // Рейтинг
+}
+// !wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww
+const colors = [
+  { hex: "#f44336", rgb: "244,67,54" },
+  { hex: "#2196f3", rgb: "33,150,243" },
+  { hex: "#4caf50", rgb: "76,175,80" },
+  { hex: "#ffeb3b", rgb: "255,235,59" },
+];
 
+const hexColors = [];
+const rgbColors = [];
+for (let color of colors) {
+  hexColors.push(color.hex);
+  rgbColors.push(color.rgb);
+}
+console.log(hexColors);
+console.log(rgbColors);
 
+// !eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
 
-
-
-
-
-
-
-
-
-
-
-
+function getProductPrice(productName) {
+  const products = [
+    { name: "Radar", price: 1300, quantity: 4 },
+    { name: "Scanner", price: 2700, quantity: 3 },
+    { name: "Droid", price: 400, quantity: 7 },
+    { name: "Grip", price: 1200, quantity: 9 },
+  ];
+ for (const product of products) {
+    if(product.name === productName) {
+    return product.price;
+  }
+}
+return null;
+}
+console.log(getProductPrice("Radar"));
+console.log(getProductPrice("Grip"));
+console.log(getProductPrice("Scanner"));
+console.log(getProductPrice("Droid"));
+console.log(getProductPrice("Engine"));
