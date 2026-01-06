@@ -568,3 +568,11 @@ console.log(getProductPrice("Grip"));
 console.log(getProductPrice("Scanner"));
 console.log(getProductPrice("Droid"));
 console.log(getProductPrice("Engine"));
+
+// !WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW
+
+const planets = ["Earth", "Mars", "Venus", "Jupiter"];
+
+const planetsLengths = planets.map(planet => planet.length);
+
+console.log(planetsLengths);
