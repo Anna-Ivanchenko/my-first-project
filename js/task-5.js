@@ -48,3 +48,39 @@ let message = `Я живу во ${myCity}!`;
 console.log(message);
 
 // !555555555555555
+const myMail = 'bubachka1990@gmail.com';
+
+// розділяємо рядок по символу @
+const part = myMail.split('@');
+// перша частина ім'я
+const mName = part[0];
+// друга частина домен
+const mDomen = part[1];
+console.log(mName);
+console.log(mDomen);
+
+// !6666666666666666666666
+// створюємо рандомне число для ціни
+const price = Math.floor(Math.random() * 100);
+
+// створюємо рядок, що містить символ гривні
+const valute = 'грн.'
+
+// об'єднуємо в спільну змінну
+const totalPrice = `Ціна: ${price} ${valute}`;
+console.log(totalPrice);
+// або без об'єднуємо одразу в виклику 
+console.log(`Ціна: ${price} ${valute}`)
+
+// !77777777777777777777777
+// створюємо зміну з булевим значенням false для того щоб перевірка дішла до кінця
+const isLogged = false;
+
+// перевіряємо на буль
+if (isLogged === true) {
+    // сюди не заходить
+    console.log(`Користувач авторизований`);
+} else {
+    // сюди заходить
+    console.log(`Користувач неавторизований`);
+}
