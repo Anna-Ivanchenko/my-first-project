@@ -224,3 +224,151 @@ function calcSimpleBMI(weight, height) {
 }
 const BMI = calcSimpleBMI('90,8', '1.784'); //підставл значення
 console.log(BMI);
+
+// function calcTotal(price, quantity, discount) {
+//     debugger; // 👈 код зупиниться тут
+
+//     const total = price * quantity;
+//     debugger; // 👈 можна поставити і тут
+
+//     const result = total - discount;
+//     return result;
+// }
+
+// console.log(calcTotal(100, 3, 50));
+
+// Напиши скрипт для відображення годин та хвилин у консолі браузера у вигляді
+// рядка формату "14 г. 26 хв.".
+// Якщо значення змінної minutes дорівнює 0,
+// то виводь рядок "14 г.", без хвилин.
+
+function time(hourse, minutes) {
+    const h = `${hourse} г.`;
+   
+    if (Number(minutes) === 0) {
+        return `Ваш час ${h}!`;
+    } 
+    const m = `${minutes} хв.`;
+    return `Ваш час ${h} ${m}`;
+}
+const yourTime = time('18', '45');
+console.log(yourTime);
+
+// Напиши скрипт для відображення часу дедлайну здачі проекту. 
+// Використовуй if...else.
+// Якщо до дедлайну 0 днів - виведи рядок "Today"
+// Якщо до дедлайну 1 день - виведи рядок "Tomorrow"
+// Якщо до дедлайну 2 дні - виведи рядок "Overmorrow"
+// Якщо до дедлайну 3+ днів - виведи рядок "Date in the future"
+function daysUntilDeadline(days) {
+    const daysNumber = Number(days);
+
+    if (daysNumber === 0) {
+        return `Today`;
+    } else if (daysNumber === 1) {
+        return `Tomorrow`;
+    } else if (daysNumber === 2) {
+        return `Overmorrow`;
+    } else {
+        return `Date in the future`;
+    }
+}
+const tDays = daysUntilDeadline('8');
+console.log(tDays);
+
+// Виконай рефакторинг коду задачі використовуючи switch.
+// Якщо до дедлайну 0 днів - виведи рядок "Today"
+// Якщо до дедлайну 1 день - виведи рядок "Tomorrow"
+// Якщо до дедлайну 3+ днів - виведи рядок "Date in the future"
+// Якщо до дедлайну 2 дні - виведи рядок ""
+function daysNextUntilDeadline(days) {
+    const daysNumber = Number(days);
+
+    switch (daysNumber) {
+        case 0:
+            return `Today`;
+            break;
+        case 1:
+            return `Tomorrow`;
+            break;
+        case 2:
+            return `Overmorrow`;
+            break;
+    
+        default:
+            return `Date in the future`;
+    }
+}
+const theDays = daysNextUntilDeadline('2');
+console.log(theDays);
+
+// Напиши скрипт вибору опції доставки товару.
+// Опція зберігається в змінній option: 1 - самовивіз, 2 - кур'єр, 3 - пошта
+// У змінну message записати повідомлення в залежності від опції.
+// - 'Ви зможете забрати товар завтра з 12:00 у нашому офісі'
+// - 'Кур'єр доставить замовлення завтра з 9:00 до 18:00'
+// - 'Посилання буде відправлено сьогодні'
+// - 'Вам передзвонить менеджер'
+function posteMessage() {
+const option = Number(prompt('Choose the option'));
+let message = '';
+
+switch (option) {
+  case 1:
+    message = 'Ви зможете забрати товар завтра з 12:00 у нашому офісі';
+    break;
+  case 2:
+    message = "Кур'єр доставить замовлення завтра з 9:00 до 18:00";
+    break;
+  case 3:
+    message = 'Посилання буде відправлено сьогодні';
+    break;
+  default:
+    message = 'Вам передзвонить менеджер';
+    }
+
+    return message;
+}
+const result = posteMessage();
+console.log(result);
+
+
+//  Напиши скрипт перевірки підписки користувача придоступі до контента
+//  - Є три типа підписки: free, pro і vip.
+//  - Отримати доступ можуть тільки користувачі pro і vip
+function userSubscription(sub) {
+    switch (sub) {
+        case 'pro':
+            return `Доступ активний`
+            break;
+        case 'vip':
+            return `Доступ активний`
+            break;
+    
+        default:
+            return `Обмежений доступ`
+            break;
+    }
+}
+const sub = 'pro';
+console.log(userSubscription(sub));
+
+
+//
+//  Напиши скрипт, який перевіряє можливість відкрити чат з користувачем.
+//  Для цього, користувач має бути:
+//  - другом
+//  - онлайн
+//  - без режима не турбувати
+//  
+function userChat(isOnline, isFriend, isDnd) {
+    
+    if (isOnline && isFriend && !isDnd) {
+        return `Welcome! Chat is open.`;
+    } else {
+        return `Goodbye!!!`;
+    };
+}
+console.log(userChat(true, true, false)); // ✅ чат відкритий
+console.log(userChat(true, true, true));  // ❌ DND
+console.log(userChat(false, true, false)); // ❌ офлайн
