@@ -114,69 +114,69 @@ console.log(orderStatus('status'));
 // Можливі значення: "basic", "standard", "premium".
 // Для кожного типу поверни повідомлення про доступні можливості.
 // Якщо тип не підтримується — поверни "Unknown subscription type".
-function subscriptionType() {
-    const options = Number(prompt(`Choose the option`));
-    let message = '';
+// function subscriptionType() {
+//     const options = Number(prompt(`Choose the option`));
+//     let message = '';
 
-    switch (options) {
-        case 1:
-            message = `Your subscription type is basic`;
-            break;
-        case 2:
-            message = `Your subscription type is standart`;
-            break;
-        case 3:
-            message = `Your subscription type is premium`;
-            break;
+//     switch (options) {
+//         case 1:
+//             message = `Your subscription type is basic`;
+//             break;
+//         case 2:
+//             message = `Your subscription type is standart`;
+//             break;
+//         case 3:
+//             message = `Your subscription type is premium`;
+//             break;
     
-        default:
-            message = `Unknown subscription type`;
-            break;
-    }
-    return message;
-}
-const resultA = subscriptionType();
-console.log(resultA);
+//         default:
+//             message = `Unknown subscription type`;
+//             break;
+//     }
+//     return message;
+// }
+// const resultA = subscriptionType();
+// console.log(resultA);
 
 //🟢 Задача 6. День тижня
 // Напиши скрипт, який за номером дня тижня (1–7)
 // повертає його назву англійською мовою.
 // Якщо номер не входить у діапазон — поверни "Invalid day number".
-function daysOfWeek() {
-    const options = Number(prompt(`Choose the option`));
-    let message = '';
+// function daysOfWeek() {
+//     const options = Number(prompt(`Choose the option`));
+//     let message = '';
 
-    switch (options) {
-        case 1:
-            message = 'Monday';
-            break;
-        case 2:
-            message = 'Thursday';
-            break;
-        case 3:
-            message = 'Wendsday';
-            break;
-        case 4:
-            message = 'Tuersday';
-            break;
-        case 5:
-            message = 'Friday';
-            break;
-        case 6:
-            message = 'Sunday';
-            break;
-        case 7:
-            message = 'Saturday';
-            break;
+//     switch (options) {
+//         case 1:
+//             message = 'Monday';
+//             break;
+//         case 2:
+//             message = 'Thursday';
+//             break;
+//         case 3:
+//             message = 'Wendsday';
+//             break;
+//         case 4:
+//             message = 'Tuersday';
+//             break;
+//         case 5:
+//             message = 'Friday';
+//             break;
+//         case 6:
+//             message = 'Sunday';
+//             break;
+//         case 7:
+//             message = 'Saturday';
+//             break;
     
-        default:
-            message = 'Invalid day number';
-            break;
-    }
-    return message;
-}
-const result = daysOfWeek();
-console.log(result);
+//         default:
+//             message = 'Invalid day number';
+//             break;
+//     }
+//     return message;
+// }
+// const result = daysOfWeek();
+// console.log(result);
 
 
 //🔹 БЛОК 3. ПЕРЕВІРКИ (логічні оператори)
@@ -267,6 +267,15 @@ console.log(adminAccess(false, true, false)); // ❌
 // - користувач авторизований
 // - немає технічних робіт
 // Реалізуй перевірку через тернарний оператор.
+function supportChat(isOperatorOnline, isAuthorized, isMaintenance) {
+    return isOperatorOnline && isAuthorized && !isMaintenance
+        ? 'Chat is available'
+        : 'Chat is unavailable';
+}
+console.log(supportChat(true, true, false));  // Chat is available
+console.log(supportChat(false, true, false)); // Chat is unavailable
+console.log(supportChat(true, false, false)); // Chat is unavailable
+console.log(supportChat(true, true, true));   // Chat is unavailable
 
 //🟢 Задача 11. Перегляд контенту
 // Напиши скрипт перевірки доступу до преміум-контенту.
@@ -274,6 +283,15 @@ console.log(adminAccess(false, true, false)); // ❌
 // - користувач має підписку
 // - не перебуває в бані
 // Використовуй тернарний оператор.
+function viewingContent(isSubscription, userIsBanned) {
+    return isSubscription && !userIsBanned
+        ? 'Access is allowed'
+        : 'Access is denied'
+}
+console.log(viewingContent(true, true)); //Access is denied
+console.log(viewingContent(true, false)); // Access is allowed
+console.log(viewingContent(false, true)); //Access is denied
+
 
 //🟢 Задача 12. Кнопка дії
 // Напиши скрипт, який визначає,
@@ -282,3 +300,11 @@ console.log(adminAccess(false, true, false)); // ❌
 // - форма валідна
 // - немає помилок
 // Поверни "Button enabled" або "Button disabled".
+function buttonActive(formIsValid, hasErrors) {
+    return formIsValid && !hasErrors
+        ? `Button enabled`
+        : `Button disabled`
+}
+console.log(buttonActive(true, true)); //Button disabled
+console.log(buttonActive(true, false)); //Button enable
+console.log(buttonActive(false, false)); //Button disabled
