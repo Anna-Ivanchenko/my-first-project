@@ -5,22 +5,24 @@
 // додай йому клас highlight
 // ❗ Не міняй текст
 // ❗ Тільки classList.add
-
+// !----------------------------------------
 // const liHasActive = document.querySelector('.header .nav .menu .active');
 // liHasActive.classList.add('highlight');
 
 // console.log(liHasActive);
+// !----------------------------------------
 
 // 🧪 Вправа 2 — classList.remove
 // 👉 Знайди той самий елемент і:
 // прибери з нього клас active
 // ❗ Після цього має залишитись:
 // <li class="menu-item highlight">About</li>
-
+// !----------------------------------------
 // const liActive = document.querySelector('.header .nav .menu .active');
 // liActive.classList.remove('active');
 
 // console.log(liActive);
+// !----------------------------------------
 
 // 🧪 Вправа 3 — style (inline)
 // 👉 Знайди <h1> і:
@@ -28,11 +30,13 @@
 // задай fontSize: 32px
 // ❗ Через element.style
 // ❗ Без класів
+// !----------------------------------------
 // const h1Style = document.querySelector('#main-title');
 // h1Style.style.color = "darkblue";
 // h1Style.style.fontSize = "32px";
 
 // console.log(h1Style);
+// !----------------------------------------
 
 // 🧪 Вправа 4 — комбінована 🔥
 // 👉 Знайди секцію Profile і:
@@ -40,13 +44,13 @@
 // задай backgroundColor: #f3f3f3
 // ❗ Без querySelectorAll
 // ❗ Можна DOM-навігацію
-
+// !----------------------------------------
 // const sectionProfileChange = document.querySelector('.section[data-section="profile"]');
 // sectionProfileChange.classList.add('profile-section');
 // sectionProfileChange.style.backgroundColor = "#f3f3f3";
 
 // console.log(sectionProfileChange);
-
+// !----------------------------------------
 // 👉 Знайди секцію Profile і:
 // якщо клас profile-section є → прибери його
 // якщо його немає → додай
@@ -55,7 +59,7 @@
 // якщо немає → backgroundColor = ''
 // ❗ Без подій
 // ❗ Просто логіка + DOM
-
+// !----------------------------------------
 // const sectProfile = document.querySelector('.section[data-section="profile"]');
 // if (sectProfile.classList.contains('profile-section')) {
 //   // якщо клас Є — прибираємо
@@ -68,7 +72,7 @@
 // }
 
 // console.log(sectProfile);
-
+// !----------------------------------------
 // const button = document.querySelector("#save-btn");
 
 // const handleClickf = event => {
@@ -78,7 +82,7 @@
 // };
 
 // button.addEventListener("click", handleClick);
-
+// !----------------------------------------
 
 
 
